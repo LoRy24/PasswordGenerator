@@ -1,7 +1,7 @@
 # Password Generator
-This is a simple program that you can use to generate 3 passwords with 3 different difficult levels:
+This is a simple program that you can use to generate 3 passwords with 3 different difficulty levels:
 * Easy - Lowercase Letters and Numbers
-* Medium - Uppercase Letters, Lowercase Letters and Numbers
+* Medium - Uppercase Letters, Lowercase Letters, and Numbers
 * Hard - Uppercase letters, lowercase letters, numbers, and some special symbols
 
 Remember! This software requires Java SE 15 or newer!
