@@ -10,7 +10,7 @@ Hard | Uppercase letters, lowercase letters, numbers, and some special symbols
 Remember! This software requires Java SE 15 or newer!
 
 ## Program Usage
-It's very easy to use. After downloaded and started it with the `-java -jar PasswordGenerator.jar` command,  you have to 
+It's very easy to use. After downloaded and started it with the `java -jar PasswordGenerator.jar` command,  you have to 
 insert the size of the password. For example if you insert `20`, the program generate 3 different passwords with 3 
 different **difficulties**, but all of these passwords will be generated with `20` characters.
 
