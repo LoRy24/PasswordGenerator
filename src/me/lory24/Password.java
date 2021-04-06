@@ -28,8 +28,7 @@ public class Password extends PasswordUtils {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(3);
                     Object[] charValue = {getLetters()[random.nextInt(getLetters().length)],
-                            getNumbers()[random.nextInt(getNumbers().length)],
-                            getUppercaseLetters()[random.nextInt(getUppercaseLetters().length)]};
+                            getNumbers()[random.nextInt(getNumbers().length)], getUppercaseLetters()[random.nextInt(getUppercaseLetters().length)]};
                     password.append(charValue[index]);
                 }
             }
