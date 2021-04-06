@@ -18,8 +18,7 @@ public class Password extends PasswordUtils {
             case LOW -> {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(2);
-                    Object[] charValue = {getLetters()[random.nextInt(getLetters().length)],
-                            getNumbers()[random.nextInt(getNumbers().length)]};
+                    Object[] charValue = {getLetters()[random.nextInt(getLetters().length)], getNumbers()[random.nextInt(getNumbers().length)]};
                     password.append(charValue[index]);
                 }
             }
