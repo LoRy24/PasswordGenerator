@@ -15,14 +15,12 @@ public class Password {
 
     public String generate() {
         final Random random = new Random();
-        char lowChar = (char) (random.nextInt(26) + 97),
-                upperChar = (char) (random.nextInt(26) + 65);
 
         switch (passwordStrength) {
             case LOW -> {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(2);
-                    Object[] charValue = {lowChar, random.nextInt(9)};
+                    Object[] charValue = {(char) (random.nextInt(26) + 97), random.nextInt(9)};
                     password.append(charValue[index]);
                 }
             }
@@ -30,7 +28,9 @@ public class Password {
             case HIGH -> {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(4);
-                    Object[] charValue = {lowChar, random.nextInt(9), upperChar, specialChars[random.nextInt(specialChars.length)]};
+                    char lowChar = (char) (random.nextInt(26) + 97), upperChar = (char) (random.nextInt(26) + 65);
+                    Object[] charValue = {lowChar, random.nextInt(9), upperChar, specialChars[
+                            random.nextInt(specialChars.length)]};
                     password.append(charValue[index]);
                 }
             }
@@ -38,6 +38,8 @@ public class Password {
             case MEDIUM -> {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(3);
+                    char lowChar = (char) (random.nextInt(26) + 97), upperChar = (char)
+                            (random.nextInt(26) + 65);
                     Object[] charValue = {lowChar, random.nextInt(9), upperChar};
                     password.append(charValue[index]);
                 }
