@@ -11,10 +11,9 @@ public class Main {
                 System.out.print("Size: ");
                 Scanner scanner = new Scanner(System.in);
                 int size = scanner.nextInt();
-                final Password[] passwords = {new Password(PasswordStrength.LOW, size), new Password(PasswordStrength.MEDIUM, size), new Password(PasswordStrength.HIGH, size)};
-                for (Password password : passwords) {
-                    System.out.println("Generated password: " + password.generate());
-                }
+                final Password[] passwords = {new Password(PasswordStrength.LOW, size), new Password(PasswordStrength.MEDIUM, size),
+                        new Password(PasswordStrength.HIGH, size)};
+                for (Password password : passwords) System.out.println("Generated password: " + password.generate());
                 break;
             } catch (Exception e) {
                 System.out.println("Error while generating passwords! Please, retry!");

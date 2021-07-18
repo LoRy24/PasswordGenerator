@@ -2,10 +2,11 @@ package me.lory24;
 
 import java.util.Random;
 
-public class Password extends PasswordUtils {
+public class Password {
     private final StringBuilder password = new StringBuilder();
     private final PasswordStrength passwordStrength;
     private final int size;
+    private final char[] specialChars = {'$', '%', '£'};
 
     public Password(PasswordStrength passwordStrength, int size) {
         this.passwordStrength = passwordStrength;
@@ -14,20 +15,14 @@ public class Password extends PasswordUtils {
 
     public String generate() {
         final Random random = new Random();
+        char lowChar = (char) (random.nextInt(26) + 97),
+                upperChar = (char) (random.nextInt(26) + 65);
+
         switch (passwordStrength) {
             case LOW -> {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(2);
-                    Object[] charValue = {getLetters()[random.nextInt(getLetters().length)], getNumbers()[random.nextInt(getNumbers().length)]};
-                    password.append(charValue[index]);
-                }
-            }
-
-            case MEDIUM -> {
-                for (int n = 0; n <= size; n++) {
-                    int index = random.nextInt(3);
-                    Object[] charValue = {getLetters()[random.nextInt(getLetters().length)],
-                            getNumbers()[random.nextInt(getNumbers().length)], getUppercaseLetters()[random.nextInt(getUppercaseLetters().length)]};
+                    Object[] charValue = {lowChar, random.nextInt(9)};
                     password.append(charValue[index]);
                 }
             }
@@ -35,9 +30,15 @@ public class Password extends PasswordUtils {
             case HIGH -> {
                 for (int n = 0; n <= size; n++) {
                     int index = random.nextInt(4);
-                    Object[] charValue = {getLetters()[random.nextInt(getLetters().length)],
-                            getNumbers()[random.nextInt(getNumbers().length)], getUppercaseLetters()[random.nextInt(getUppercaseLetters().length)],
-                            getSpecialSymbols()[random.nextInt(getSpecialSymbols().length)]};
+                    Object[] charValue = {lowChar, random.nextInt(9), upperChar, specialChars[random.nextInt(specialChars.length)]};
+                    password.append(charValue[index]);
+                }
+            }
+
+            case MEDIUM -> {
+                for (int n = 0; n <= size; n++) {
+                    int index = random.nextInt(3);
+                    Object[] charValue = {lowChar, random.nextInt(9), upperChar};
                     password.append(charValue[index]);
                 }
             }
